@@ -847,16 +847,16 @@ spec: # Especificação do recurso
         severity: critical # Label que indica a severidade do alerta
       annotations: # Anotações do alerta
         summary: "Nginx is down" # Título do alerta
-        description: "Nginx is down for more than 1 minute. Pod name: {{ $labels.pod }}" # Descrição do alerta
-
+        description: "Nginx is down for more than 1 minute. Pod name: {{ $labels.pod }}" # Descrição do alerta 
+    
     - alert: NginxHighRequestRate # Nome do alerta
-        expr: rate(nginx_http_requests_total{job="nginx"}[5m]) > 10 # Expressão que será utilizada para disparar o alerta
-        for: 1m # Tempo que a expressão deve ser verdadeira para que o alerta seja disparado
-        labels: # Labels do alerta
-            severity: warning # Label que indica a severidade do alerta
-        annotations: # Anotações do alerta
-            summary: "Nginx is receiving high request rate" # Título do alerta
-            description: "Nginx is receiving high request rate for more than 1 minute. Pod name: {{ $labels.pod }}" # Descrição do alerta
+      expr: rate(nginx_http_requests_total{job="nginx"}[5m]) > 10 # Expressão que será utilizada para disparar o alerta
+      for: 1m # Tempo que a expressão deve ser verdadeira para que o alerta seja disparado
+      labels: # Labels do alerta
+          severity: warning # Label que indica a severidade do alerta
+      annotations: # Anotações do alerta
+          summary: "Nginx is receiving high request rate" # Título do alerta
+          description: "Nginx is receiving high request rate for more than 1 minute. Pod name: {{ $labels.pod }}" # Descrição do alerta
 ```
 
 Pronto, adicionamos uma nova definição de alerta em nosso PrometheusRule. Agora vamos atualizar o nosso PrometheusRule:
