@@ -139,7 +139,7 @@ spec:
       app.kubernetes.io/part-of: kube-prometheus
 ```
 
-Pronto, eu tirei algumas informações que não são importantes para a criação do ServiceMonitor, elas apenas trazer as informações do service monitor que foi criado e que pegamos a saída.
+Pronto, eu tirei algumas informações que não são importantes para a criação do ServiceMonitor, elas apenas trazem as informações do service monitor que foi criado e que pegamos a saída.
 
 Com o arquivo limpo, podemos entender melhor o que está acontecendo.
 
